@@ -12,7 +12,7 @@ import SafariServices
 /** 
  Social Login Service takes care of aspects of handling deep links intended for social login, as well as routing between different social providers.
 */
-class SocialLoginService: NSObject {
+open class SocialLoginService: NSObject {
     static let socialProviderHandlers: [StormpathSocialProvider: LoginProvider] = [.facebook: FacebookLoginProvider(), .google: GoogleLoginProvider()]
     
     weak var stormpath: Stormpath!
