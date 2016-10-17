@@ -51,6 +51,21 @@ public final class Stormpath: NSObject {
     }
     
     /**
+     Initializes the Stormpath object with a default configuration. The
+     identifier is used to namespace the current state of the object, so that on
+     future loads we can find the saved credentials from the right location. The
+     default identifier is "default".  This version of the constructor also takes
+     a Social Login Service class, which could allow you to override the behavior
+     of how it presents the safari view controller to do the login flow, for example.
+     */
+    public init(identifier: String, socialLoginService:SocialLoginService) {
+        super.init()
+        apiService = APIService(withStormpath: self)
+        keychain = KeychainService(withIdentifier: identifier)
+        self.socialLoginService = socialLoginService
+    }
+    
+    /**
      This method registers an account from the data provided.
      
      - parameters:
