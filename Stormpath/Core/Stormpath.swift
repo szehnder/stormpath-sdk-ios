@@ -32,7 +32,7 @@ public final class Stormpath: NSObject {
     var apiService: APIService!
     
     /// Reference to the Social Login Service.
-    var socialLoginService: SocialLoginService!
+    public var socialLoginService: SocialLoginService!
     
     /// Reference to the Keychain Service.
     var keychain: KeychainService!
