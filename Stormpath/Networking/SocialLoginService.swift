@@ -20,7 +20,7 @@ open class SocialLoginService: NSObject {
     
     var safari: UIViewController?
     
-    init(withStormpath stormpath: Stormpath) {
+    public init(withStormpath stormpath: Stormpath) {
         super.init()
         self.stormpath = stormpath
     }
